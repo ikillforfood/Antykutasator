@@ -13,3 +13,7 @@ C:\Users\Mariusz Dobrowolski\Documents\Visual Studio 2015\Projects\Antykutasator
 C:\Users\Mariusz Dobrowolski\Documents\Visual Studio 2015\Projects\Antykutasator\NotifyIconWpf\obj\Debug\NotifyIconWpf.csprojResolveAssemblyReference.cache
 C:\Users\Mariusz Dobrowolski\Documents\Visual Studio 2015\Projects\Antykutasator\NotifyIconWpf\obj\Debug\Hardcodet.Wpf.TaskbarNotification.dll
 C:\Users\Mariusz Dobrowolski\Documents\Visual Studio 2015\Projects\Antykutasator\NotifyIconWpf\obj\Debug\Hardcodet.Wpf.TaskbarNotification.pdb
+C:\Users\Mariusz Dobrowolski\Documents\MyProjects\Antykutasator\NotifyIconWpf\bin\Debug\Hardcodet.Wpf.TaskbarNotification.dll
+C:\Users\Mariusz Dobrowolski\Documents\MyProjects\Antykutasator\NotifyIconWpf\bin\Debug\Hardcodet.Wpf.TaskbarNotification.pdb
+C:\Users\Mariusz Dobrowolski\Documents\MyProjects\Antykutasator\NotifyIconWpf\obj\Debug\Hardcodet.Wpf.TaskbarNotification.dll
+C:\Users\Mariusz Dobrowolski\Documents\MyProjects\Antykutasator\NotifyIconWpf\obj\Debug\Hardcodet.Wpf.TaskbarNotification.pdb

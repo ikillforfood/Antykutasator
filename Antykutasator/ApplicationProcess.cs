@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using Antykutasator.Helpers;
 using Antykutasator.Services;
 using Utils.Asynchronous;
@@ -23,7 +24,7 @@ namespace Antykutasator
 
         public void HandleException(Exception ex)
         {
-            throw new NotImplementedException();
+            Debug.WriteLine(ex.ToString());
         }
 
         private void DispatcherService_UnhandledException(object sender, Exception e)

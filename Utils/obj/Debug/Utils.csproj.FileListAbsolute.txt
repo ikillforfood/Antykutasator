@@ -8,3 +8,7 @@ C:\Users\Mariusz Dobrowolski\Documents\Visual Studio 2015\Projects\Antykutasator
 C:\Users\Mariusz Dobrowolski\Documents\Visual Studio 2015\Projects\Antykutasator\Utils\obj\Debug\Utils.csprojResolveAssemblyReference.cache
 C:\Users\Mariusz Dobrowolski\Documents\Visual Studio 2015\Projects\Antykutasator\Utils\obj\Debug\Utils.dll
 C:\Users\Mariusz Dobrowolski\Documents\Visual Studio 2015\Projects\Antykutasator\Utils\obj\Debug\Utils.pdb
+C:\Users\Mariusz Dobrowolski\Documents\MyProjects\Antykutasator\Utils\bin\Debug\Utils.dll
+C:\Users\Mariusz Dobrowolski\Documents\MyProjects\Antykutasator\Utils\bin\Debug\Utils.pdb
+C:\Users\Mariusz Dobrowolski\Documents\MyProjects\Antykutasator\Utils\obj\Debug\Utils.dll
+C:\Users\Mariusz Dobrowolski\Documents\MyProjects\Antykutasator\Utils\obj\Debug\Utils.pdb

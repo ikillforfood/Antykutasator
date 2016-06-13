@@ -6,7 +6,7 @@ namespace Antykutasator.VideoCapture
 {
     public interface IVideoCaptureService
     {
-        void Start(FilterInfo selectedVideoDevice = null);
+        void Start();
         void Stop();
         event EventHandler<NewFrameEventArgs> FrameCaptured;
     }

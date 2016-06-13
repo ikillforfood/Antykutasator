@@ -2,26 +2,29 @@
 using System.Diagnostics;
 using Antykutasator.FaceDetection;
 using Antykutasator.Helpers;
+using Microsoft.Win32;
 using Utils.Asynchronous;
 
 namespace Antykutasator.Services
 {
     public class LockingService : ILockingService
     {
-        private const int FaceNotDetectedLimit = 5;
-        private readonly TimeSpan _deviceInactivityLimit;
         private readonly IMouseService _mouseService;
         private readonly IKeyboardService _keyboardService;
+        private readonly ApplicationConfiguration _applicationConfiguration;
         private int _faceNotDetectedInRow = 0;
 
         public LockingService(IMediator mediator,
             IMouseService mouseService,
-            IKeyboardService keyboardService)
+            IKeyboardService keyboardService,
+            ApplicationConfiguration applicationConfiguration)
         {
             mediator.RegisterAsync<FaceDetectionResult>(this, FaceDetectionResultHandler);
             _mouseService = mouseService;
             _keyboardService = keyboardService;
-            _deviceInactivityLimit = new TimeSpan(0, 0, 0, 5);
+
+            SystemEvents.SessionSwitch += SystemEvents_SessionSwitch;
+            _applicationConfiguration = applicationConfiguration;
         }
 
         public void LockWorkstation()
@@ -41,14 +44,26 @@ namespace Antykutasator.Services
                 _faceNotDetectedInRow = 0;
             }
 
-            if (_faceNotDetectedInRow < FaceNotDetectedLimit)
+            if (_faceNotDetectedInRow < _applicationConfiguration.FaceNotDetectedLimit)
             {
                 return;
             }
-            if (DateTime.Now - _mouseService.LastDeviceActivityTime < _deviceInactivityLimit ||
-                DateTime.Now - _keyboardService.LastDeviceActivityTime < _deviceInactivityLimit) return;
+            if (DateTime.Now - _mouseService.LastDeviceActivityTime < _applicationConfiguration.DeviceInactivityLimit ||
+                DateTime.Now - _keyboardService.LastDeviceActivityTime < _applicationConfiguration.DeviceInactivityLimit) return;
             LockWorkstation();
             _faceNotDetectedInRow = 0;
+        }
+
+        private void SystemEvents_SessionSwitch(object sender, SessionSwitchEventArgs e)
+        {
+            if (e.Reason == SessionSwitchReason.SessionLock)
+            {
+                _applicationConfiguration.ScreenLocked = true;
+            }
+            else if (e.Reason == SessionSwitchReason.SessionUnlock)
+            {
+                _applicationConfiguration.ScreenLocked = false;
+            }
         }
     }
 }
